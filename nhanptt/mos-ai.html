@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khóa học luyện thi chứng chỉ tin học văn phòng MOS quốc tế (Word, Excel, PowerPoint) tại TechVision Academy.">
+    <title>Khóa Học MOS Quốc Tế (Word, Excel, PowerPoint) - TechVision Academy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: rgba(21, 30, 48, 0.75);
+            --bg-card-hover: rgba(30, 43, 69, 0.9);
+            --primary-glow: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-light: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+        /* Navbar Styling */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff !important;
+        }
+
+        .brand-logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary-glow), var(--accent-cyan));
+            border-radius: 10px;
+            margin-right: 10px;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            margin: 0 8px;
+        }
+
+        .nav-link:hover { color: #ffffff !important; }
+
+        /* Buttons & CTA */
+        .btn-gradient-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-gradient-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.6);
+            color: #ffffff;
+        }
+
+        .btn-outline-glow {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-glow:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        /* Banner Section with Word Excel Workstation Theme Background */
+        .course-banner-section {
+            position: relative;
+            padding: 150px 0 80px;
+            background: linear-gradient(180deg, rgba(11, 15, 25, 0.75) 0%, rgba(11, 15, 25, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            border-bottom: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .course-banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.3) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .banner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 30px;
+            color: #60a5fa;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .banner-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Course Main Content Styling */
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(16px);
+        }
+
+        .section-heading {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .section-heading::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 4px; bottom: 4px;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-glow), var(--accent-cyan));
+            border-radius: 4px;
+        }
+
+        .office-brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .bg-word { background: rgba(37, 99, 235, 0.15); color: #60a5fa; border: 1px solid rgba(37, 99, 235, 0.3); }
+        .bg-excel { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .bg-ppt { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+        /* Syllabus Accordion */
+        .accordion-item {
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-light);
+            border-radius: 14px !important;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background-color: transparent;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 18px 24px;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-body {
+            color: var(--text-muted);
+            line-height: 1.7;
+            background-color: rgba(9, 13, 22, 0.4);
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* Sticky Sidebar Widget */
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .widget-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .pricing-option-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-option-card:hover, .pricing-option-card.active {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.12);
+        }
+
+        .schedule-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .schedule-info-item:last-child { border-bottom: none; }
+
+        .schedule-info-item i {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            margin-top: 2px;
+        }
+
+        /* Social Media Widget Buttons */
+        .social-widget-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-widget-btn:hover {
+            transform: translateX(4px);
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .social-facebook { background: linear-gradient(135deg, #1877f2, #0d5bb5); }
+        .social-youtube { background: linear-gradient(135deg, #ff0000, #b30000); }
+        .social-tiktok { background: linear-gradient(135deg, #000000, #25f4ee); border: 1px solid rgba(255,255,255,0.2); }
+        .social-zalo { background: linear-gradient(135deg, #0068ff, #0043a8); }
+        .social-linkedin { background: linear-gradient(135deg, #0a66c2, #004182); }
+
+        /* Modal styling */
+        .modal-content {
+            background-color: #0f172a;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            color: var(--text-main);
+        }
+        .modal-header { border-bottom: 1px solid var(--border-light); }
+
+        .form-control, .form-select {
+            background-color: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 10px 14px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #1e293b;
+            color: #ffffff;
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #070a12;
+            border-top: 1px solid var(--border-light);
+            padding: 50px 0 30px;
+        }
+
+        @media (max-width: 991.98px) {
+            .banner-title { font-size: 2.3rem; }
+            .sticky-sidebar { position: relative; top: 0; margin-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="brand-logo-icon">
+                    <i class="bi bi-cpu-fill text-white"></i>
+                </span>
+                <span>TechVision<span style="color: var(--primary-glow);">.Edu</span></span>
+            </a>
+            
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="mos-ai.html">Khóa Học MOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ai-course.html">Khóa Học AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#courses">Tất Cả Khóa Học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="tel:0987654321" class="text-white text-decoration-none d-none d-xl-flex align-items-center gap-2">
+                        <i class="bi bi-telephone-fill text-primary"></i>
+                        <span class="fw-semibold">0987.654.321</span>
+                    </a>
+                    <button class="btn btn-gradient-primary btn-sm px-4" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        <i class="bi bi-send-fill me-1"></i> Đăng Ký Ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="course-banner-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="banner-badge">
+                        <i class="bi bi-award-fill"></i> Chứng Chỉ Quốc Tế Certiport Hoa Kỳ
+                    </div>
+                    <h1 class="banner-title text-white">
+                        Khóa Học <span class="text-gradient-blue">Luyện Thi MOS Quốc Tế</span>
+                    </h1>
+                    <p class="lead text-light mb-4" style="max-width: 680px; line-height: 1.7;">
+                        Làm chủ trọn bộ kỹ năng Tin học văn phòng Word, Excel & PowerPoint. Cam kết chuẩn đầu ra 100%, thi đạt bằng ngay sau khóa học.
+                    </p>
+
+                    <!-- Office Modules Pill Badges -->
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="office-brand-badge bg-word">
+                            <i class="bi bi-file-earmark-word-fill"></i> Microsoft Word
+                        </span>
+                        <span class="office-brand-badge bg-excel">
+                            <i class="bi bi-file-earmark-excel-fill"></i> Microsoft Excel
+                        </span>
+                        <span class="office-brand-badge bg-ppt">
+                            <i class="bi bi-file-earmark-ppt-fill"></i> Microsoft PowerPoint
+                        </span>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-gradient-primary px-4 py-3" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            <i class="bi bi-check-circle-fill me-2"></i> Đăng Ký Giữ Ưu Đãi
+                        </button>
+                        <a href="#syllabus" class="btn btn-outline-glow px-4 py-3">
+                            <i class="bi bi-list-nested me-2"></i> Xem Lộ Trình 6 Buổi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area (2 Columns) -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row">
+                
+                <!-- Left Column: Detailed Course Information -->
+                <div class="col-lg-8">
+                    
+                    <!-- Overview Card -->
+                    <div class="content-card">
+                        <h3 class="section-heading text-white h4">Giới Thiệu Khóa Học MOS</h3>
+                        <p class="text-muted leading-relaxed">
+                            <strong>MOS (Microsoft Office Specialist)</strong> là chứng chỉ tin học văn phòng quốc tế có giá trị vĩnh viễn trên toàn thế giới, được cấp trực tiếp bởi tập đoàn Microsoft & Certiport Hoa Kỳ. Đây là tiêu chuẩn vàng được hàng ngàn doanh nghiệp, ngân hàng và trường đại học dùng làm thước đo đánh giá năng lực tin học.
+                        </p>
+                        <p class="text-muted leading-relaxed">
+                            Chương trình đào tạo MOS tại <strong>TechVision Academy</strong> giúp bạn thành thạo 3 công cụ cốt lõi: <strong>Word</strong> (Xử lý văn bản báo cáo chuyên nghiệp), <strong>Excel</strong> (Quản trị & Phân tích dữ liệu), và <strong>PowerPoint</strong> (Thiết kế slide trình chiếu ấn tượng).
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-4">
+                                <div class="p-3 rounded-3 text-center" style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-light);">
+                                    <i class="bi bi-file-earmark-word-fill fs-1 text-primary mb-2 d-block"></i>
+                                    <h5 class="text-white fw-bold h6">MOS Word</h5>
+                                    <p class="text-muted small mb-0">Trộn thư Mail Merge, định dạng Style, làm báo cáo luận văn chuẩn.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 rounded-3 text-center" style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-light);">
+                                    <i class="bi bi-file-earmark-excel-fill fs-1 text-success mb-2 d-block"></i>
+                                    <h5 class="text-white fw-bold h6">MOS Excel</h5>
+                                    <p class="text-muted small mb-0">Hàm nâng cao, Pivot Table, VLOOKUP/XLOOKUP & biểu đồ chuyên sâu.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 rounded-3 text-center" style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-light);">
+                                    <i class="bi bi-file-earmark-ppt-fill fs-1 text-warning mb-2 d-block"></i>
+                                    <h5 class="text-white fw-bold h6">MOS PowerPoint</h5>
+                                    <p class="text-muted small mb-0">Slide Master, hiệu ứng chuyển động mượt mà, thuyết trình cuốn hút.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Syllabus Section -->
+                    <div id="syllabus" class="content-card">
+                        <h3 class="section-heading text-white h4">Lộ Trình Đào Tạo (6 Buổi Tinh Gọn)</h3>
+                        <p class="text-muted small mb-4">Lộ trình học thực hành trên phần mềm phần cứng thực tế kết hợp bộ đề thi thử Certiport chuẩn 100%.</p>
+
+                        <div class="accordion" id="accordionMOS">
+                            <!-- Buổi 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mosOne">
+                                        <i class="bi bi-1-circle-fill me-3 fs-5"></i> Buổi 1: MOS Word - Quản Trị Văn Bản & Định Dạng Chuyên Nghiệp
+                                    </button>
+                                </h2>
+                                <div id="mosOne" class="accordion-collapse collapse show" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Tổng quan về cấu trúc bài thi MOS Word chuẩn Certiport.</li>
+                                            <li>Tạo và quản lý tài liệu, làm việc với Styles & Document Formats.</li>
+                                            <li>Chèn và định dạng Bảng (Tables), Hình ảnh (Shapes, SmartArt, Pictures).</li>
+                                            <li>Thực hành: Làm các Project mẫu sát 95% đề thi thật.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buổi 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mosTwo">
+                                        <i class="bi bi-2-circle-fill me-3 fs-5"></i> Buổi 2: MOS Word Nâng Cao & Trộn Thư Mail Merge
+                                    </button>
+                                </h2>
+                                <div id="mosTwo" class="accordion-collapse collapse" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Tạo Mục lục tự động, Trích dẫn Footnote & Bảng chú giải Endnote.</li>
+                                            <li>Ứng dụng Mail Merge gửi thư mời, hợp đồng đồng loạt.</li>
+                                            <li>Thiết lập bảo mật file Word, theo dõi thay đổi (Track Changes).</li>
+                                            <li>Giải bộ đề thi thử MOS Word lấy điểm tối đa 1000/1000.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buổi 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mosThree">
+                                        <i class="bi bi-3-circle-fill me-3 fs-5"></i> Buổi 3: MOS Excel - Quản Lý Bảng Tính & Hàm Xử Lý Dữ Liệu
+                                    </button>
+                                </h2>
+                                <div id="mosThree" class="accordion-collapse collapse" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Cấu trúc đề thi MOS Excel & thao tác quản lý Worksheets, Cells, Ranges.</li>
+                                            <li>Làm chủ các hàm tính toán cơ bản & nâng cao: SUMIF, COUNTIF, AVERAGEIF.</li>
+                                            <li>Hàm dò tìm dữ liệu thần thánh: VLOOKUP, HLOOKUP, XLOOKUP, INDEX & MATCH.</li>
+                                            <li>Thực hành: Xử lý bảng lương, báo cáo tài chính doanh nghiệp.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buổi 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mosFour">
+                                        <i class="bi bi-4-circle-fill me-3 fs-5"></i> Buổi 4: MOS Excel - PivotTable, Biểu Đồ & Thi Thử Certiport
+                                    </button>
+                                </h2>
+                                <div id="mosFour" class="accordion-collapse collapse" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Tạo và tùy biến báo cáo động với PivotTable & PivotChart.</li>
+                                            <li>Vẽ biểu đồ chuyên nghiệp (Bar, Line, Pie, Combo Charts).</li>
+                                            <li>Lọc dữ liệu nâng cao Advanced Filter & Định dạng có điều kiện Conditional Formatting.</li>
+                                            <li>Giải chi tiết bộ đề thi thử MOS Excel thực tế trên hệ thống phần mềm Gmetrix.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buổi 5 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mosFive">
+                                        <i class="bi bi-5-circle-fill me-3 fs-5"></i> Buổi 5: MOS PowerPoint - Thiết Kế Slide Thuyết Trình Đỉnh Cao
+                                    </button>
+                                </h2>
+                                <div id="mosFive" class="accordion-collapse collapse" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Cấu trúc bài thi MOS PowerPoint & tư duy Slide Master quản lý bố cục.</li>
+                                            <li>Chèn âm thanh, video, hiệu ứng chuyển trang (Transitions) và hoạt hình (Animations).</li>
+                                            <li>Tạo Infographics, sơ đồ tư duy SmartArt & xuất file dạng Video HD.</li>
+                                            <li>Thực hành: Hoàn thiện slide thuyết trình dự án ấn tượng.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buổi 6 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mosSix">
+                                        <i class="bi bi-6-circle-fill me-3 fs-5"></i> Buổi 6: Ôn Tập Tổng Hợp & Đăng Ký Thi Cấp Bằng Quốc Tế
+                                    </button>
+                                </h2>
+                                <div id="mosSix" class="accordion-collapse collapse" data-bs-parent="#accordionMOS">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Thi thử tổng hợp 3 môn trên phần mềm mô phỏng phòng thi thật 100%.</li>
+                                            <li>Giảng viên sửa lỗi từng học viên, chia sẻ mẹo làm bài thi tiết kiệm thời gian.</li>
+                                            <li>Hướng dẫn thủ tục đăng ký thi lấy chứng chỉ MOS trực tiếp tại IIG Vietnam / Certiport.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sticky Sidebar Widgets -->
+                <div class="col-lg-4">
+                    <div class="sticky-sidebar">
+
+                        <!-- Pricing Option Selection Widget -->
+                        <div class="widget-box">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-primary px-3 py-2 text-uppercase fw-bold">Chọn Gói Học Phí</span>
+                                <span class="text-success small fw-bold"><i class="bi bi-gift-fill"></i> Ưu đãi 40%</span>
+                            </div>
+
+                            <!-- Option 1: Word + Excel -->
+                            <div class="pricing-option-card active" onclick="selectPricing(this, 'Gói Word + Excel', '1.000.000 VNĐ')">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="fw-bold text-white">Gói 2 Môn (Word + Excel)</span>
+                                    <span class="badge bg-success">Phổ biến</span>
+                                </div>
+                                <div class="text-muted small mb-2">Đào tạo thành thạo Word & Excel thực chiến</div>
+                                <div class="fw-bold text-primary fs-4">1.000.000 VNĐ</div>
+                            </div>
+
+                            <!-- Option 2: Word + Excel + PowerPoint -->
+                            <div class="pricing-option-card" onclick="selectPricing(this, 'Gói 3 Môn Full (Word + Excel + PPT)', '1.500.000 VNĐ')">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="fw-bold text-white">Gói 3 Môn Full (Word+Excel+PPT)</span>
+                                    <span class="badge bg-warning text-dark">Khuyên dùng</span>
+                                </div>
+                                <div class="text-muted small mb-2">Trọn bộ 3 chứng chỉ tin học văn phòng MOS</div>
+                                <div class="fw-bold text-warning fs-4">1.500.000 VNĐ</div>
+                            </div>
+
+                            <!-- Schedule details -->
+                            <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
+                                <div class="schedule-info-item">
+                                    <i class="bi bi-journal-bookmark-fill"></i>
+                                    <div>
+                                        <div class="fw-bold text-white small">Thời lượng học:</div>
+                                        <div class="text-muted small"><strong>6 buổi</strong> (mỗi buổi 3 tiếng)</div>
+                                    </div>
+                                </div>
+
+                                <div class="schedule-info-item">
+                                    <i class="bi bi-calendar-week-fill"></i>
+                                    <div>
+                                        <div class="fw-bold text-white small">Lịch học hàng tuần:</div>
+                                        <div class="text-muted small"><strong>Thứ 7 & Chủ Nhật</strong></div>
+                                    </div>
+                                </div>
+
+                                <div class="schedule-info-item">
+                                    <i class="bi bi-clock-fill"></i>
+                                    <div>
+                                        <div class="fw-bold text-white small">Khung giờ học:</div>
+                                        <div class="text-muted small"><strong>13:30 - 16:30</strong> (Buổi chiều)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-gradient-primary w-100 py-3 mt-3 fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                ĐĂNG KÝ GIỮ SUẤT NGAY
+                            </button>
+                        </div>
+
+                        <!-- Social Media Widget -->
+                        <div class="widget-box">
+                            <h5 class="text-white fw-bold mb-3 font-heading">
+                                <i class="bi bi-share-fill text-primary me-2"></i>Kênh Mạng Xã Hội
+                            </h5>
+                            <p class="text-muted small mb-3">Theo dõi TechVision Academy để nhận tài liệu MOS & đề thi miễn phí:</p>
+
+                            <a href="https://facebook.com" target="_blank" class="social-widget-btn social-facebook">
+                                <span><i class="bi bi-facebook fs-5 me-2"></i> Facebook Page</span>
+                                <span class="badge bg-white text-dark rounded-pill">125K Follow</span>
+                            </a>
+
+                            <a href="https://youtube.com" target="_blank" class="social-widget-btn social-youtube">
+                                <span><i class="bi bi-youtube fs-5 me-2"></i> YouTube Channel</span>
+                                <span class="badge bg-white text-dark rounded-pill">85K Sub</span>
+                            </a>
+
+                            <a href="https://tiktok.com" target="_blank" class="social-widget-btn social-tiktok">
+                                <span><i class="bi bi-tiktok fs-5 me-2"></i> TikTok Official</span>
+                                <span class="badge bg-white text-dark rounded-pill">210K Follow</span>
+                            </a>
+
+                            <a href="https://zalo.me" target="_blank" class="social-widget-btn social-zalo">
+                                <span><i class="bi bi-chat-fill fs-5 me-2"></i> Zalo Official OA</span>
+                                <span class="badge bg-white text-dark rounded-pill">Hỗ trợ 24/7</span>
+                            </a>
+
+                            <a href="https://linkedin.com" target="_blank" class="social-widget-btn social-linkedin">
+                                <span><i class="bi bi-linkedin fs-5 me-2"></i> LinkedIn Network</span>
+                                <span class="badge bg-white text-dark rounded-pill">Tuyển dụng</span>
+                            </a>
+                        </div>
+
+                        <!-- Hotline Direct Box -->
+                        <div class="widget-box text-center" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15)); border-color: rgba(59, 130, 246, 0.3);">
+                            <i class="bi bi-headset fs-1 text-primary mb-2 d-block"></i>
+                            <h6 class="text-white fw-bold mb-1">Tư Vấn Chọn Gói Học MOS</h6>
+                            <p class="text-muted small mb-3">Hotline hỗ trợ giải đáp thắc mắc 24/7</p>
+                            <a href="tel:0987654321" class="btn btn-outline-glow w-100 fw-bold">
+                                <i class="bi bi-telephone-fill text-primary me-2"></i> 0987.654.321
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                        <span class="brand-logo-icon">
+                            <i class="bi bi-cpu-fill text-white"></i>
+                        </span>
+                        <span>TechVision<span style="color: var(--primary-glow);">.Edu</span></span>
+                    </a>
+                    <p class="text-muted small mb-3">
+                        Trung tâm đào tạo công nghệ hàng đầu, chuyên cung cấp các khóa học Tin học văn phòng MOS, Lập trình Java và Ứng dụng AI thực chiến.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 font-heading">Thông Tin Khóa Học MOS</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li class="mb-2"><strong>Gói 2 Môn (Word + Excel):</strong> 1.000.000 VNĐ</li>
+                        <li class="mb-2"><strong>Gói 3 Môn (Word + Excel + PPT):</strong> 1.500.000 VNĐ</li>
+                        <li class="mb-2"><strong>Thời gian:</strong> 6 buổi (Thứ 7 & CN, 13:30 - 16:30)</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 font-heading">Địa Chỉ Trụ Sở</h5>
+                    <p class="text-muted small mb-1"><i class="bi bi-geo-alt-fill text-primary me-2"></i> Tầng 5, Tòa nhà Tech Tower, Q. Cầu Giấy, Hà Nội</p>
+                    <p class="text-muted small mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> Hotline: 0987.654.321</p>
+                    <p class="text-muted small"><i class="bi bi-envelope-fill text-primary me-2"></i> Email: tuvan@techvision.edu.vn</p>
+                </div>
+            </div>
+
+            <div class="pt-3 border-top border-secondary border-opacity-25 text-center text-muted small">
+                <p class="mb-0">&copy; 2026 TechVision Academy. Bản quyền thuộc về Trung Tâm Đào Tạo Tin Học & Công Nghệ TechVision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading fw-bold text-white" id="registerModalLabel">
+                        <i class="bi bi-pencil-square text-primary me-2"></i>Đăng Ký Khóa Học MOS Quốc Tế
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="registrationForm" onsubmit="handleRegistration(event)">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label small text-muted">Họ và Tên <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="phoneNumber" class="form-label small text-muted">Số Điện Thoại <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="0912xxx345" required pattern="[0-9]{10,11}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="emailInput" class="form-label small text-muted">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseSelect" class="form-label small text-muted">Gói Học MOS Chọn Đăng Ký</label>
+                            <select class="form-select" id="courseSelect">
+                                <option value="MOS Gói 2 Môn (Word + Excel) - 1.000.000đ" selected>Gói 2 Môn: Word + Excel (1.000.000đ)</option>
+                                <option value="MOS Gói 3 Môn (Word + Excel + PPT) - 1.500.000đ">Gói 3 Môn: Word + Excel + PowerPoint (1.500.000đ)</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="studyFormat" class="form-label small text-muted">Lịch Học & Khung Giờ</label>
+                            <select class="form-select" id="studyFormat">
+                                <option value="T7 & CN (13:30 - 16:30)">Thứ 7 & Chủ Nhật (13:30 - 16:30)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary w-100 py-2">
+                            <i class="bi bi-check-circle-fill me-1"></i> XÁC NHẬN ĐĂNG KÝ HỌC
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                    <strong id="toastMessage">Đăng ký thành công!</strong>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        function selectPricing(element, optionName, price) {
+            document.querySelectorAll('.pricing-option-card').forEach(card => card.classList.remove('active'));
+            element.classList.add('active');
+
+            const courseSelect = document.getElementById('courseSelect');
+            if (courseSelect) {
+                for (let option of courseSelect.options) {
+                    if (option.text.includes(price)) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function handleRegistration(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const selectedPackage = document.getElementById('courseSelect').value;
+
+            // Hide Modal
+            const registerModalEl = document.getElementById('registerModal');
+            const modalInstance = bootstrap.Modal.getInstance(registerModalEl);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+
+            // Show Success Toast
+            const toastMessageEl = document.getElementById('toastMessage');
+            toastMessageEl.textContent = `Cảm ơn ${name}! Bạn đã đăng ký giữ suất thành công ${selectedPackage}. Hotline sẽ gọi số ${phone} để xác nhận.`;
+            
+            const toastEl = document.getElementById('successToast');
+            const toast = new bootstrap.Toast(toastEl, { delay: 6000 });
+            toast.show();
+
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        }
+    </script>
+</body>
+</html>
